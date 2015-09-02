@@ -1,5 +1,6 @@
 package com.example.spun.androidshowcase;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Lista de actividades
         String[] data = {
-                "Activity 1",
-                "Activity 2"
+                "Headset plug receiver"
         };
         List<String> activitiesList = new ArrayList<>(Arrays.asList(data));
 
@@ -43,7 +43,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 String activity = mActivitiesAdapter.getItem(position);
-                Toast.makeText(getApplicationContext(), activity, Toast.LENGTH_LONG).show();
+                Intent intent = null;
+
+                if(activity.equals("Headset plug receiver")) { // Apertura de imagenes del dispositivo
+                    intent = new Intent(MainActivity.this, HeadphoneBroadcastReceiver.class);
+                }
+
+                if(intent != null) {
+                    startActivity(intent);
+                }
             }
         });
     }
