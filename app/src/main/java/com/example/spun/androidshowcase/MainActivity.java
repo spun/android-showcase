@@ -1,8 +1,8 @@
 package com.example.spun.androidshowcase;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         // Lista de actividades
         String[] data = {
                 "Headset plug receiver",
-                "Palette"
+                "Palette",
+                "Sensors"
         };
         List<String> activitiesList = new ArrayList<>(Arrays.asList(data));
 
@@ -45,13 +46,21 @@ public class MainActivity extends AppCompatActivity {
                 String activity = mActivitiesAdapter.getItem(position);
                 Intent intent = null;
 
-                if(activity.equals("Headset plug receiver")) {
-                    intent = new Intent(MainActivity.this, HeadphoneReceiverActivity.class);
-                } else if(activity.equals("Palette")) { // Apertura de imagenes del dispositivo
-                    intent = new Intent(MainActivity.this, PaletteActivity.class);
+                switch (activity) {
+                    case "Headset plug receiver":
+                        intent = new Intent(MainActivity.this, HeadphoneReceiverActivity.class);
+                        break;
+                    case "Palette":
+                        intent = new Intent(MainActivity.this, PaletteActivity.class);
+                        break;
+                    case "Sensors":
+                        intent = new Intent(MainActivity.this, SensorsActivity.class);
+                        break;
+                    default:
+                        break;
                 }
 
-                if(intent != null) {
+                if (intent != null) {
                     startActivity(intent);
                 }
             }

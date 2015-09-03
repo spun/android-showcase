@@ -8,4 +8,12 @@
     <!-- Palette Activity -->
     <string name="title_activity_palette">PaletteActivity</string>
     <string name="palette_gallery_button">Gallery</string>
+
+    <!-- Sensors Activity -->
+    <string name="title_activity_sensors">SensorsActivity</string>
+    <string name="light_sensor_section">Light sensor</string>
+    <string name="gravity_sensor_section">Gravity sensor</string>
+    <string name="pressure_sensor_section">Pressure sensor</string>
+    <string name="proximity_sensor_section">Proximity sensor</string>
+    <string name="ambient_tempertature_section">Ambient temperature sensor</string>
 </resources>
