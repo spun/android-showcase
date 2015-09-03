@@ -6,19 +6,18 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class HeadphoneBroadcastReceiver extends AppCompatActivity {
+public class HeadphoneReceiverActivity extends AppCompatActivity {
 
     private BroadcastReceiver mReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_headphone_broadcast_receiver);
+        setContentView(R.layout.activity_headphone_receiver);
     }
 
     @Override
@@ -56,7 +55,7 @@ public class HeadphoneBroadcastReceiver extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_headphone_broadcast_receiver, menu);
+        getMenuInflater().inflate(R.menu.menu_headphone_receiver, menu);
         return true;
     }
 

@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = null;
 
                 if(activity.equals("Headset plug receiver")) { // Apertura de imagenes del dispositivo
-                    intent = new Intent(MainActivity.this, HeadphoneBroadcastReceiver.class);
+                    intent = new Intent(MainActivity.this, HeadphoneReceiverActivity.class);
                 }
 
                 if(intent != null) {

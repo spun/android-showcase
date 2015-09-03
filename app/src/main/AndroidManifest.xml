@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HeadphoneBroadcastReceiver"
-            android:label="@string/title_activity_headphone_broadcast_receiver"
+            android:name=".HeadphoneReceiverActivity"
+            android:label="@string/title_activity_headphone_receiver"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
