@@ -4,4 +4,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_headphone_receiver">HeadphoneReceiver</string>
+
+    <!-- Palette Activity -->
+    <string name="title_activity_palette">PaletteActivity</string>
+    <string name="palette_gallery_button">Gallery</string>
 </resources>

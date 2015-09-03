@@ -24,6 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.spun.androidshowcase.MainActivity" />
         </activity>
+        <activity
+            android:name=".PaletteActivity"
+            android:label="@string/title_activity_palette"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.spun.androidshowcase.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

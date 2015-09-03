@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Lista de actividades
         String[] data = {
-                "Headset plug receiver"
+                "Headset plug receiver",
+                "Palette"
         };
         List<String> activitiesList = new ArrayList<>(Arrays.asList(data));
 
@@ -44,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 String activity = mActivitiesAdapter.getItem(position);
                 Intent intent = null;
 
-                if(activity.equals("Headset plug receiver")) { // Apertura de imagenes del dispositivo
+                if(activity.equals("Headset plug receiver")) {
                     intent = new Intent(MainActivity.this, HeadphoneReceiverActivity.class);
+                } else if(activity.equals("Palette")) { // Apertura de imagenes del dispositivo
+                    intent = new Intent(MainActivity.this, PaletteActivity.class);
                 }
 
                 if(intent != null) {
