@@ -16,4 +16,5 @@
     <string name="pressure_sensor_section">Pressure sensor</string>
     <string name="proximity_sensor_section">Proximity sensor</string>
     <string name="ambient_tempertature_section">Ambient temperature sensor</string>
+    <string name="title_activity_barcode_scanner">BarcodeScannerActivity</string>
 </resources>

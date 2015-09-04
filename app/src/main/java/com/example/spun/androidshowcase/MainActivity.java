@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         String[] data = {
                 "Headset plug receiver",
                 "Palette",
-                "Sensors"
+                "Sensors",
+                "Barcode scanner"
         };
         List<String> activitiesList = new ArrayList<>(Arrays.asList(data));
 
@@ -55,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "Sensors":
                         intent = new Intent(MainActivity.this, SensorsActivity.class);
+                        break;
+                    case "Barcode scanner":
+                        intent = new Intent(MainActivity.this, BarcodeScannerActivity.class);
                         break;
                     default:
                         break;
