@@ -25,4 +25,7 @@
 
     <!-- Design Support Library Activity -->
     <string name="title_activity_design_library">DesignLibraryActivity</string>
+
+    <!-- Intent Filter Activity -->
+    <string name="title_activity_intent_filter">IntentFilterActivity</string>
 </resources>
