@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
                 "Headset plug receiver",
                 "Palette",
                 "Sensors",
-                "Barcode scanner"
+                "Barcode scanner",
+                "Recycler view"
         };
         List<String> activitiesList = new ArrayList<>(Arrays.asList(data));
 
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "Barcode scanner":
                         intent = new Intent(MainActivity.this, BarcodeScannerActivity.class);
+                        break;
+                    case "Recycler view":
+                        intent = new Intent(MainActivity.this, RecyclerActivity.class);
                         break;
                     default:
                         break;
