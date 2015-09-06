@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
                 "Palette",
                 "Sensors",
                 "Barcode scanner",
-                "Recycler view"
+                "Recycler view",
+                "Design Support Library"
         };
         List<String> activitiesList = new ArrayList<>(Arrays.asList(data));
 
@@ -63,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "Recycler view":
                         intent = new Intent(MainActivity.this, RecyclerActivity.class);
+                        break;
+                    case "Design Support Library":
+                        intent = new Intent(MainActivity.this, DesignLibraryActivity.class);
                         break;
                     default:
                         break;
