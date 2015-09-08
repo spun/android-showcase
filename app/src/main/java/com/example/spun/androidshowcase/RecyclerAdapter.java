@@ -8,13 +8,18 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
-    private String[] mDataset;
+    private List<String> mDataset = new ArrayList<>();
     MyAdapterOnClick mListenerAdapter;
 
     // Constructor
     public RecyclerAdapter(String[] myDataset, MyAdapterOnClick myListenerAdapter) {
-        mDataset = myDataset;
+        mDataset = new ArrayList<>(Arrays.asList(myDataset));
         mListenerAdapter = myListenerAdapter;
     }
 
@@ -31,13 +36,25 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     // Reemplaza los contenidos de una vista (invocado por el layout manager)
     @Override
     public void onBindViewHolder(RecyclerAdapter.MyViewHolder holder, int position) {
-        holder.mTextView.setText(mDataset[position]);
+        holder.mTextView.setText(mDataset.get(position));
     }
 
     // Revuelve el tamaño de la lista de datos (invocado por el layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
+    }
+
+    // Mueve un elemento de la lista
+    public void onItemMove(int fromPosition, int toPosition) {
+        Collections.swap(mDataset, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    // Borra un elemento de la lista
+    public void onItemDismiss(int position) {
+        mDataset.remove(position);
+        notifyItemRemoved(position);
     }
 
     public interface MyAdapterOnClick {

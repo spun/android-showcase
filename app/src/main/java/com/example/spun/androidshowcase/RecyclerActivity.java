@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ public class RecyclerActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // elementos que muestra la lista
-        String[] myDataset = new String[100];
+        String[] myDataset = new String[10];
         for (int i = 0; i < myDataset.length; i++) {
             myDataset[i] = "Element " + i;
         }
@@ -43,6 +44,11 @@ public class RecyclerActivity extends AppCompatActivity {
             }
         });
         mRecyclerView.setAdapter(mAdapter);
+
+        // Drag and Swipe en RecyclerView
+        ItemTouchHelper.Callback myItemTouchHelper = new MySimpleItemTouchHelperCallback(mAdapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(myItemTouchHelper);
+        itemTouchHelper.attachToRecyclerView(mRecyclerView);
 
     }
 
