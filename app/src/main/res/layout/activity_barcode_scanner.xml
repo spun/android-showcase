@@ -9,27 +9,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.spun.androidshowcase.BarcodeScannerActivity">
 
-    <ImageView
-        android:id="@+id/barcode_picture_imageview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <SurfaceView
+        android:id="@+id/camera_view"
+        android:layout_width="640px"
+        android:layout_height="480px" />
 
-        <TextView
-            android:id="@+id/barcode_result_textview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
-    </ScrollView>
-
-    <Button
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/code_info"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="launchCamera"
-        android:text="Camera" />
+        android:textSize="20sp" />
 </LinearLayout>

@@ -1,94 +1,86 @@
 package com.example.spun.androidshowcase;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.widget.TextView;
 
-import com.google.android.gms.vision.Frame;
+import com.google.android.gms.vision.CameraSource;
+import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
+import java.io.IOException;
+
 public class BarcodeScannerActivity extends AppCompatActivity {
 
-    static final String CAMERA_PHOTO = "cameraPhoto";
-    static final String SCAN_RESULT = "scanResult";
-
-    private static final int REQUEST_IMAGE_CAPTURE = 1;
-    ImageView mImageView;
-    TextView mBarcodeResultTextView;
-    Bitmap mPhoto;
-    String mScanResult;
+    private BarcodeDetector mBarcodeDetector;
+    private CameraSource mCameraSource;
+    private SurfaceView mCameraView;
+    private TextView mBarcodeInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode_scanner);
 
-        mImageView = (ImageView) findViewById(R.id.barcode_picture_imageview);
-        mBarcodeResultTextView = (TextView) findViewById(R.id.barcode_result_textview);
-    }
+        mCameraView = (SurfaceView) findViewById(R.id.camera_view);
+        mBarcodeInfo = (TextView) findViewById(R.id.code_info);
 
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
+        mBarcodeDetector = new BarcodeDetector.Builder(this).build();
 
-        // Restaura una imagen escaneada anteriormente
-        mPhoto = savedInstanceState.getParcelable(CAMERA_PHOTO);
-        mImageView.setImageBitmap(mPhoto);
-        // Restaura el resultado de una imagen escaneada anteriormente
-        mScanResult = savedInstanceState.getString(SCAN_RESULT);
-        mBarcodeResultTextView.setText(mScanResult);
-    }
+        mCameraSource = new CameraSource
+                .Builder(this, mBarcodeDetector)
+                .setRequestedPreviewSize(480, 640)
+                .build();
 
-    public void launchCamera(View view) {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            mPhoto = (Bitmap) data.getExtras().get("data");
-            mImageView.setImageBitmap(mPhoto);
-            scanPhoto(mPhoto);
-        }
-    }
-
-    private void scanPhoto(Bitmap photo) {
-        BarcodeDetector barcodeDetector = new BarcodeDetector.Builder(this).build();
-        if (!barcodeDetector.isOperational()) {
-            mBarcodeResultTextView.setText("Barcode Scanner no operational");
-        } else {
-            Frame frame = new Frame.Builder().setBitmap(photo).build();
-            SparseArray<Barcode> barcodes = barcodeDetector.detect(frame);
-
-            mScanResult = String.valueOf(barcodes.size()) + " barcodes";
-            for (int i = 0; i < barcodes.size(); i++) {
-                Barcode thisCode = barcodes.valueAt(i);
-                mScanResult = mScanResult + "\n\n" + thisCode.rawValue;
+        mCameraView.getHolder().addCallback(new SurfaceHolder.Callback() {
+            @Override
+            public void surfaceCreated(SurfaceHolder holder) {
+                try {
+                    mCameraSource.start(mCameraView.getHolder());
+                } catch (IOException ie) {
+                    Log.e("CAMERA SOURCE", ie.getMessage());
+                }
             }
-            mBarcodeResultTextView.setText(mScanResult);
-        }
+
+            @Override
+            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+            }
+
+            @Override
+            public void surfaceDestroyed(SurfaceHolder holder) {
+                mCameraSource.stop();
+            }
+        });
+
+        mBarcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
+            @Override
+            public void release() {
+            }
+
+            @Override
+            public void receiveDetections(Detector.Detections<Barcode> detections) {
+                final SparseArray<Barcode> barcodes = detections.getDetectedItems();
+
+                if (barcodes.size() != 0) {
+                    mBarcodeInfo.post(new Runnable() {
+                        public void run() {
+                            mBarcodeInfo.setText(barcodes.valueAt(0).displayValue);
+                        }
+                    });
+                }
+            }
+        });
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        // Guarda la imagen y el resultado de un escaneo
-        outState.putParcelable(CAMERA_PHOTO, mPhoto);
-        outState.putString(SCAN_RESULT, mScanResult);
-
         super.onSaveInstanceState(outState);
     }
 
