@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 "Barcode scanner",
                 "Recycler view",
                 "Design Support Library",
-                "Media player"
+                "Media player",
+                "Search bar"
         };
         List<String> activitiesList = new ArrayList<>(Arrays.asList(data));
 
@@ -78,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "Media player":
                         intent = new Intent(MainActivity.this, MediaPlayerActivity.class);
+                        break;
+                    case "Search bar":
+                        intent = new Intent(MainActivity.this, SearchBar.class);
                         break;
                     default:
                         break;

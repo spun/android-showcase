@@ -29,8 +29,12 @@
     <!-- Intent Filter Activity -->
     <string name="title_activity_intent_filter">IntentFilterActivity</string>
 
-    <!-- Intent Filter Activity -->
+    <!-- Media Player Activity -->
     <string name="title_activity_media_player">MediaPlayerActivity</string>
     <string name="play_activity_media_player">Play</string>
     <string name="pause_activity_media_player">Pause</string>
+
+    <!-- Search Bar Activity -->
+    <string name="title_activity_search_bar">SearchBar</string>
+    <string name="action_search">Search</string>
 </resources>
