@@ -1,4 +1,4 @@
-package com.example.spun.androidshowcase.gcm;
+package com.spundev.spun.androidshowcase.gcm;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -7,7 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import com.example.spun.androidshowcase.R;
+import com.spundev.spun.androidshowcase.R;
 import com.google.android.gms.gcm.GcmPubSub;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;

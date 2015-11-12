@@ -1,4 +1,4 @@
-package com.example.spun.androidshowcase;
+package com.spundev.spun.androidshowcase;
 
 import android.content.Context;
 import android.hardware.Sensor;

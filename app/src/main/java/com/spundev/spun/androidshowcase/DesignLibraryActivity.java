@@ -1,4 +1,4 @@
-package com.example.spun.androidshowcase;
+package com.spundev.spun.androidshowcase;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;

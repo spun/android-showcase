@@ -1,4 +1,4 @@
-package com.example.spun.androidshowcase.gcm;
+package com.spundev.spun.androidshowcase.gcm;
 
 public class QuickstartPreferences {
 

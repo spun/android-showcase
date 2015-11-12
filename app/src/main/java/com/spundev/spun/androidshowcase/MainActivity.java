@@ -1,4 +1,4 @@
-package com.example.spun.androidshowcase;
+package com.spundev.spun.androidshowcase;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.spun.androidshowcase.gcm.RegistrationIntentService;
+import com.spundev.spun.androidshowcase.gcm.RegistrationIntentService;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 

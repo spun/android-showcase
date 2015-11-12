@@ -1,4 +1,4 @@
-package com.example.spun.androidshowcase.gcm;
+package com.spundev.spun.androidshowcase.gcm;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -10,8 +10,8 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.example.spun.androidshowcase.MainActivity;
-import com.example.spun.androidshowcase.R;
+import com.spundev.spun.androidshowcase.MainActivity;
+import com.spundev.spun.androidshowcase.R;
 import com.google.android.gms.gcm.GcmListenerService;
 
 public class MyGcmListenerService extends GcmListenerService {

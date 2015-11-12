@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.spun.androidshowcase">
+    package="com.spundev.spun.androidshowcase">
 
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.spundev.spun.androidshowcase.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,58 +24,58 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HeadphoneReceiverActivity"
+            android:name="com.spundev.spun.androidshowcase.HeadphoneReceiverActivity"
             android:label="@string/title_activity_headphone_receiver"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.spundev.spun.androidshowcase.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.spun.androidshowcase.MainActivity" />
         </activity>
         <activity
-            android:name=".PaletteActivity"
+            android:name="com.spundev.spun.androidshowcase.PaletteActivity"
             android:label="@string/title_activity_palette"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.spundev.spun.androidshowcase.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.spun.androidshowcase.MainActivity" />
         </activity>
         <activity
-            android:name=".SensorsActivity"
+            android:name="com.spundev.spun.androidshowcase.SensorsActivity"
             android:label="@string/title_activity_sensors"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.spundev.spun.androidshowcase.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.spun.androidshowcase.MainActivity" />
         </activity>
         <activity
-            android:name=".BarcodeScannerActivity"
+            android:name="com.spundev.spun.androidshowcase.BarcodeScannerActivity"
             android:label="@string/title_activity_barcode_scanner"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.spundev.spun.androidshowcase.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.spun.androidshowcase.MainActivity" />
         </activity>
         <activity
-            android:name=".RecyclerActivity"
+            android:name="com.spundev.spun.androidshowcase.RecyclerActivity"
             android:label="@string/title_activity_recycler"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.spundev.spun.androidshowcase.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.spun.androidshowcase.MainActivity" />
         </activity>
         <activity
-            android:name=".DesignLibraryActivity"
+            android:name="com.spundev.spun.androidshowcase.DesignLibraryActivity"
             android:label="@string/title_activity_design_library"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.spundev.spun.androidshowcase.MainActivity"
             android:theme="@style/AppThemeNoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.spun.androidshowcase.MainActivity" />
         </activity>
         <activity
-            android:name=".IntentFilterActivity"
+            android:name="com.spundev.spun.androidshowcase.IntentFilterActivity"
             android:label="@string/title_activity_intent_filter"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.spundev.spun.androidshowcase.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -101,7 +101,7 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.spun.androidshowcase.MainActivity" />
         </activity>
 
         <!-- [START gcm_receiver] -->
@@ -120,7 +120,7 @@
 
         <!-- [START gcm_listener] -->
         <service
-            android:name=".gcm.MyGcmListenerService"
+            android:name="com.spundev.spun.androidshowcase.gcm.MyGcmListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -131,7 +131,7 @@
 
         <!-- [START instanceId_listener] -->
         <service
-            android:name=".gcm.MyInstanceIDListenerService"
+            android:name="com.spundev.spun.androidshowcase.gcm.MyInstanceIDListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
@@ -140,19 +140,19 @@
         <!-- [END instanceId_listener] -->
 
         <service
-            android:name=".gcm.RegistrationIntentService"
+            android:name="com.spundev.spun.androidshowcase.gcm.RegistrationIntentService"
             android:exported="false" />
 
         <activity
-            android:name=".MediaPlayerActivity"
+            android:name="com.spundev.spun.androidshowcase.MediaPlayerActivity"
             android:label="@string/title_activity_media_player"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.spundev.spun.androidshowcase.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.spun.androidshowcase.MainActivity" />
         </activity>
 
-        <service android:name=".MediaPlayerService" />
+        <service android:name="com.spundev.spun.androidshowcase.MediaPlayerService" />
     </application>
 
 </manifest>
