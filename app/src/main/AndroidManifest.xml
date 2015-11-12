@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.spundev.spun.androidshowcase" >
+    package="com.spundev.androidshowcase" >
 
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -29,7 +29,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
         <activity
             android:name=".PaletteActivity"
@@ -37,7 +37,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
         <activity
             android:name=".SensorsActivity"
@@ -45,7 +45,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
         <activity
             android:name=".BarcodeScannerActivity"
@@ -53,7 +53,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
         <activity
             android:name=".RecyclerActivity"
@@ -61,7 +61,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
         <activity
             android:name=".DesignLibraryActivity"
@@ -70,7 +70,7 @@
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
         <activity
             android:name=".IntentFilterActivity"
@@ -101,7 +101,7 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
 
         <!-- [START gcm_receiver] -->
@@ -112,7 +112,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
-                <category android:name="com.example.spun.androidshowcase" />
+                <category android:name="com.spundev.androidshowcase" />
             </intent-filter>
         </receiver>
         <!-- [END gcm_receiver] -->
@@ -149,7 +149,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
 
         <service android:name=".MediaPlayerService" />
@@ -161,7 +161,7 @@
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.spundev.spun.androidshowcase.MainActivity" />
+                android:value="com.spundev.androidshowcase.MainActivity" />
         </activity>
     </application>
 
