@@ -3,6 +3,7 @@ package com.spundev.spun.androidshowcase;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
 
 public class DesignLibraryActivity extends AppCompatActivity {
 
@@ -24,12 +26,9 @@ public class DesignLibraryActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null) {
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
-        // evita el bug que cierra la aplicación al interactuar con la snackbar
-        ((CoordinatorLayout.LayoutParams) findViewById(R.id.appbar_layout).getLayoutParams()).setBehavior(new AppBarLayoutBehavior());
 
         // recycler view
         RecyclerView rv = (RecyclerView) findViewById(R.id.list_recyclerview);
@@ -45,11 +44,20 @@ public class DesignLibraryActivity extends AppCompatActivity {
         rv.setAdapter(new RecyclerAdapter(dataset, new RecyclerAdapter.MyAdapterOnClick() {
             @Override
             public void onTap(String charSequence) {
-                Snackbar
-                        .make(findViewById(R.id.list_recyclerview), charSequence, Snackbar.LENGTH_LONG)
+                Snackbar.make(findViewById(R.id.list_recyclerview), charSequence, Snackbar.LENGTH_LONG)
                         .show();
             }
         }));
+
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Fab", Snackbar.LENGTH_SHORT)
+                        .setAction("Action", null).show();
+            }
+        });
     }
 
     @Override

@@ -67,7 +67,7 @@
             android:name=".DesignLibraryActivity"
             android:label="@string/title_activity_design_library"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppThemeNoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.spundev.spun.androidshowcase.MainActivity" />
