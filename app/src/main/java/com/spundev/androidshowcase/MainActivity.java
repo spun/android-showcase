@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 "Headset plug receiver",
                 "Palette",
                 "Sensors",
-                "Barcode scanner",
+                // "Barcode scanner",
                 "Recycler view",
                 "Design Support Library",
                 "Media player",
